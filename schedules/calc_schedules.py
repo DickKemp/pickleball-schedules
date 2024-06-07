@@ -35,7 +35,7 @@ if __name__ == '__main__':
         min_score_results = json.load(fp)
 
         final_results = [{ "num_players" : result['num_players'], "schedule" : result['pairings'] } for result in min_score_results]
-        with open(f"schedule_{num_rounds}.json", "w") as f:
+        with open(f"../schedule_{num_rounds}.json", "w") as f:
             json.dump(final_results, f, indent=4)
 
 
