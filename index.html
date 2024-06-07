@@ -1,1 +1,62 @@
-<object type="text/html" data="schedules/generate_html.html"></object>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 8in;
+            height: 10in;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .round-table {
+            width: 30%; /* I changed this to 30% from 100% */
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .round-table th, .round-table td {
+            border: 1px solid #000;
+            padding: 2px 4px; /* Reduced horizontal padding */
+            text-align: center;
+            font-size: 12px; /* Reduced font size */
+            white-space: nowrap; /* Prevent wrapping */
+        }
+        .head-table th, .head-table td {
+            border: 1px solid #000;
+            /* padding: 2px 4px; */
+            font-weight: bold;
+            text-align: right;
+            font-size: 14px; /* Reduced font size */
+            /* width: 100%; */
+        }
+        .round-table th {
+            width: 33.33%; /* Ensure equal width columns */
+        }
+        .round-title {
+            text-align: left; /* I changed this to left */
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 14px; /* Adjusted font size */
+        }
+        .sitting {
+            margin-top: 0px;
+            text-align: left; /* I ccanged this to left */
+            font-size: 12px; /* Adjusted font size */
+        }
+    </style>
+    <title>Tournament Schedule</title>
+</head>
+<body>
+    <div class="container">
+        <div id="schedule"></div>
+    </div>
+    <script src="schedules/generate_schedule.js"></script>
+</body>
+</html>
