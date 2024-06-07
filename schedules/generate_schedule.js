@@ -1,49 +1,269 @@
 const myscheduleData = [
     {
-            "playing": [
-                [2, 8, 16, 12],
-                [13, 4, 10, 1],
-                [7, 3, 6, 14],
-                [9, 11, 5, 17]
-            ],
-            "sitting": [15]
-        },
-        {
-            "playing": [
-                [5, 1, 7, 12],
-                [3, 10, 16, 9],
-                [13, 15, 4, 17],
-                [8, 11, 2, 6]
-            ],
-            "sitting": [14]
-        },
-        {
-            "playing": [
-                [10, 13, 5, 2],
-                [17, 12, 6, 16],
-                [3, 14, 4, 8],
-                [7, 1, 9, 15]
-            ],
-            "sitting": [11]
-        },
-        {
-            "playing": [
-                [2, 8, 16, 12],
-                [13, 4, 10, 1],
-                [7, 3, 6, 14],
-                [9, 11, 5, 17]
-            ],
-            "sitting": [15]
-        },
-        {
-            "playing": [
-                [5, 1, 7, 12],
-                [3, 10, 16, 9],
-                [13, 15, 4, 17],
-                [8, 11, 2, 6]
-            ],
-            "sitting": [14]
-        }
+        "num_players": 13,
+        "schedule": [
+            {
+                "playing": [
+                    [
+                        11,
+                        12,
+                        2,
+                        7
+                    ],
+                    [
+                        13,
+                        1,
+                        4,
+                        3
+                    ],
+                    [
+                        6,
+                        10,
+                        5,
+                        9
+                    ]
+                ],
+                "sitting": [
+                    8
+                ]
+            },
+            {
+                "playing": [
+                    [
+                        12,
+                        13,
+                        9,
+                        1
+                    ],
+                    [
+                        8,
+                        3,
+                        7,
+                        6
+                    ],
+                    [
+                        4,
+                        10,
+                        11,
+                        2
+                    ]
+                ],
+                "sitting": [
+                    5
+                ]
+            },
+            {
+                "playing": [
+                    [
+                        13,
+                        8,
+                        10,
+                        2
+                    ],
+                    [
+                        4,
+                        5,
+                        3,
+                        9
+                    ],
+                    [
+                        1,
+                        12,
+                        6,
+                        11
+                    ]
+                ],
+                "sitting": [
+                    7
+                ]
+            },
+            {
+                "playing": [
+                    [
+                        1,
+                        3,
+                        8,
+                        9
+                    ],
+                    [
+                        13,
+                        10,
+                        7,
+                        12
+                    ],
+                    [
+                        5,
+                        6,
+                        11,
+                        4
+                    ]
+                ],
+                "sitting": [
+                    2
+                ]
+            },
+            {
+                "playing": [
+                    [
+                        10,
+                        7,
+                        6,
+                        4
+                    ],
+                    [
+                        5,
+                        3,
+                        12,
+                        2
+                    ],
+                    [
+                        8,
+                        11,
+                        9,
+                        13
+                    ]
+                ],
+                "sitting": [
+                    1
+                ]
+            }
+        ]
+    },
+    {
+        "num_players": 14,
+        "schedule": [
+            {
+                "playing": [
+                    [
+                        12,
+                        14,
+                        5,
+                        6
+                    ],
+                    [
+                        9,
+                        8,
+                        11,
+                        4
+                    ],
+                    [
+                        7,
+                        13,
+                        2,
+                        1
+                    ]
+                ],
+                "sitting": [
+                    3,
+                    10
+                ]
+            },
+            {
+                "playing": [
+                    [
+                        4,
+                        8,
+                        13,
+                        3
+                    ],
+                    [
+                        6,
+                        12,
+                        9,
+                        7
+                    ],
+                    [
+                        14,
+                        10,
+                        1,
+                        11
+                    ]
+                ],
+                "sitting": [
+                    2,
+                    5
+                ]
+            },
+            {
+                "playing": [
+                    [
+                        6,
+                        4,
+                        5,
+                        11
+                    ],
+                    [
+                        10,
+                        1,
+                        3,
+                        2
+                    ],
+                    [
+                        8,
+                        14,
+                        7,
+                        12
+                    ]
+                ],
+                "sitting": [
+                    13,
+                    9
+                ]
+            },
+            {
+                "playing": [
+                    [
+                        13,
+                        1,
+                        5,
+                        12
+                    ],
+                    [
+                        10,
+                        4,
+                        6,
+                        7
+                    ],
+                    [
+                        3,
+                        14,
+                        9,
+                        2
+                    ]
+                ],
+                "sitting": [
+                    8,
+                    11
+                ]
+            },
+            {
+                "playing": [
+                    [
+                        10,
+                        2,
+                        9,
+                        12
+                    ],
+                    [
+                        13,
+                        8,
+                        6,
+                        14
+                    ],
+                    [
+                        5,
+                        3,
+                        11,
+                        7
+                    ]
+                ],
+                "sitting": [
+                    1,
+                    4
+                ]
+            }
+        ]
+    }    
     ];
 
     async function fetchScheduleData(url) {
@@ -89,11 +309,13 @@ const myscheduleData = [
 
     function renderSchedule(data) {
         let scheduleDiv = document.getElementById('schedule');
-        renderSchedule2(scheduleDiv, data);
-        renderSchedule2(scheduleDiv, data);
+        data.forEach((sched, index) => {
+            renderSchedule2(scheduleDiv, sched.num_players, sched.schedule);
+        });
     }
-    function renderSchedule2(scheduleDiv, data) {
-        scheduleDiv.innerHTML += '<H2>17 players</H2>';
+
+    function renderSchedule2(scheduleDiv, num_players, data) {
+        scheduleDiv.innerHTML += `<H2>${num_players} Players</H2>`;
         scheduleDiv.innerHTML += `            
                 <table class="head-table">
                 <tr>
@@ -121,5 +343,5 @@ const myscheduleData = [
         scheduleDiv.innerHTML += '<div style="break-after:page"></div>';
     }
 
-    renderSchedule(myscheduleData);
-    
+    fetchScheduleData("schedule_5.json");
+    // renderSchedule(myscheduleData);
