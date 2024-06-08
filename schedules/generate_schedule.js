@@ -12,7 +12,7 @@
         }
     } 
     function generateTable(round, roundNumber) {
-        html += `<div class="round-title">Round ${roundNumber}</div>`;            
+        let html = `<div class="round-title">Round ${roundNumber}</div>`;            
         html += '<table class="round-table">';
         html += `
             <tr>
