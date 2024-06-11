@@ -11,51 +11,78 @@
         }
         .container {
             width: 8in;
-            height: 10in;
-            margin: 0 auto;
+            margin: 0 60px;
             padding: 10px;
             box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 100px;
         }
         .round-table {
-            width: 30%; /* I changed this to 30% from 100% */
+            width: 100%;
             border-collapse: collapse;
             margin-bottom: 10px;
         }
-        .round-table th, .round-table td {
+        .head-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;            
+            margin-bottom: 10px;
+        }
+        .round-table th, .round-table td, .head-table th, .head-table td {
             border: 1px solid #000;
-            padding: 2px 4px; /* Reduced horizontal padding */
+            padding: 2px 50px;
             text-align: center;
-            font-size: 12px; /* Reduced font size */
-            white-space: nowrap; /* Prevent wrapping */
+            font-size: 18px;
+            white-space: nowrap;
         }
         .head-table th, .head-table td {
-            border: 1px solid #000;
-            /* padding: 2px 4px; */
             font-weight: bold;
             text-align: right;
-            font-size: 14px; /* Reduced font size */
-            /* width: 100%; */
+            font-size: 18px;
         }
         .round-table th {
-            width: 33.33%; /* Ensure equal width columns */
+            width: 33.33%;
         }
         .round-title {
-            text-align: left; /* I changed this to left */
+            text-align: left;
             font-weight: bold;
-            margin-top: 30px;
-            font-size: 14px; /* Adjusted font size */
+            font-size: 18px;
+            margin-top: 10px;
         }
         .sitting {
             margin-top: 0px;
-            text-align: left; /* I ccanged this to left */
-            font-size: 12px; /* Adjusted font size */
+            text-align: left;
+            font-size: 18px;
         }
+        .footer{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            text-align: right ;
+            font-size: 12px ;
+            font-family: verdana ;
+            /* width: 600px ;
+            height: 50px ; */
+            /* background-color: #f6f6f6 ; */
+        }        
+        .footer2{
+            position: fixed;
+            bottom: 20px;
+            right: 0;
+            text-align: right ;
+            font-size: 12px ;
+            font-family: verdana ;
+            /* width: 600px ;
+            height: 50px ; */
+            /* background-color: #f6f6f6 ; */
+        }        
     </style>
-    <title>Tournament Schedule</title>
+    <title>League Schedule</title>
 </head>
 <body>
-    <div class="container">
-        <div id="schedule"></div>
+    <div class="main">
+        <div id="body_schedule"></div>
     </div>
     <script src="schedules/generate_schedule.js"></script>
 </body>
