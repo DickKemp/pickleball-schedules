@@ -57,7 +57,7 @@
             </div>
             `;
             innerHTML += `
-            <div class="footer2">Print from here: https://dickkemp.github.io/pickleball-schedules/</div>
+            <div class="footer2">Schedules: https://dickkemp.github.io/pickleball-schedules/</div>
             <div class="footer">Code: https://github.com/DickKemp/pickleball-schedules</div>
             `;
             
